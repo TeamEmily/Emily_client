@@ -1,4 +1,4 @@
-package com.rnredux;
+package com.emily;
 
 import android.app.Application;
 

@@ -9,10 +9,10 @@ import App from './shared/containers/app'
 
 const store = configureStore()
 
-const RNRedux = () => (
+const Emily = () => (
   <Provider store={store}>
     <App />
   </Provider>
 )
 
-AppRegistry.registerComponent('RNRedux', () => RNRedux)
+AppRegistry.registerComponent('Emily', () => Emily)
