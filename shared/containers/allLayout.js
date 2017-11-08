@@ -1,9 +1,9 @@
 import React from 'react';
-import MessageBar from '../components/messagebar';
-import MessageBody from '../components/messagebody';
+import MessageBar from '../components/messageBar';
+import MessageBody from '../components/messageBody';
 import { View, StyleSheet } from 'react-native';
 
-export default class App extends React.Component {
+export default class AllLayout extends React.Component {
   render() {
     return (
       <View style={styles.container}>

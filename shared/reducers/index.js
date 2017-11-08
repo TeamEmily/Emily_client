@@ -1,10 +1,10 @@
 // reducers/index.js
 
 import { combineReducers } from 'redux'
-import people from './people'
+import message from './message'
 
 const rootReducer = combineReducers({
-    people
+    message
 })
 
 export default rootReducer

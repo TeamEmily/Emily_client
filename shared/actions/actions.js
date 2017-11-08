@@ -1,15 +1,7 @@
-import { ADD_PERSON, DELETE_PERSON } from './constants';
+import * as types from './actionTypes';
 
-export function addPerson(person) {
+export function sendMessage(msg) {
   return {
-    type: 'ADD_PERSON',
-    person,
-  };
-}
-
-export function deletePerson(person) {
-  return {
-    type: 'DELETE_PERSON',
-    person,
+    type: types.SEND_MESSAGE
   };
 }

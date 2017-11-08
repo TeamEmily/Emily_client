@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageBubble from './messagebubble';
+import MessageBubble from './messageBubble';
 import { StyleSheet, Text, ScrollView} from 'react-native';
 
 export default class MessageBody extends React.Component {
