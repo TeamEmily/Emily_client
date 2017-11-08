@@ -1,14 +1,14 @@
 import React from 'react';
-import MessageBar from '../components/messageBar';
-import MessageBody from '../components/messageBody';
+import MessageBarLayout from './messageBarLayout';
+import MessageBodyLayout from './messageBodyLayout';
 import { View, StyleSheet } from 'react-native';
 
 export default class AllLayout extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <MessageBody/>
-        <MessageBar/>
+        <MessageBodyLayout/>
+        <MessageBarLayout/>
       </View>
     );
   }
