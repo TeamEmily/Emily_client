@@ -33,7 +33,7 @@ export default class App extends React.Component {
         <TextInput
           value={this.state.message}
           onChangeText={this.changeInput}
-          onSubmitEditing={this.sendMessage}          
+          onSubmitEditing={this.sendMessage}
           style={styles.input}
         />
       <TouchableHighlight
@@ -49,10 +49,11 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 50,
+    height: '8%',
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
+    margin: 3
   },
   input: {
     flex: 5,
