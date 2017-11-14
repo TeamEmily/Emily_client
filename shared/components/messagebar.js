@@ -18,19 +18,21 @@ export default class App extends React.Component {
   }
 
   changeInput = (newMessage) => {
-    console.log(this.state.newMessage)
+    console.log(this.state.message);
     this.setState({message: newMessage});
   }
 
   sendMessage = () => {
-    console.log(this.state.message)
+    this.props.sendMessage(this.state.message);
     this.setState({message: ''});
+    this.refs.messageInput.blur();
   }
 
   render() {
     return (
       <View style={styles.container}>
         <TextInput
+          ref="messageInput"
           value={this.state.message}
           onChangeText={this.changeInput}
           onSubmitEditing={this.sendMessage}

@@ -1,10 +1,10 @@
 // reducers/index.js
 
 import { combineReducers } from 'redux'
-import message from './message'
+import messageReducer from './message'
 
 const rootReducer = combineReducers({
-    message
+    message: messageReducer
 })
 
 export default rootReducer

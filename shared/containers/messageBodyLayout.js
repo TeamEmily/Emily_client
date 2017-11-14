@@ -3,7 +3,7 @@ import MessageBody from '../components/messageBody';
 
 const mapStateToProps = (state) => {
   return {
-    currentPostedUri: state.logs
+    logs: state.message.logs
   };
 };
 

@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
 };
 
 
-const mapDispatchToProps = () => {
+const mapDispatchToProps = (dispatch) => {
   return {
     sendMessage: (token) => {
       return dispatch(sendMessage(token));

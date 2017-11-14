@@ -1,8 +1,17 @@
 import * as types from './actionTypes';
+import RESTManager from '../service/messageService';
+export const sendMessage = (msg) => {
+  return (dispatch) => {
+      return RESTManager.sendMessage(msg)
+        .then(json => dispatch(getResponse(json, msg)))
+  };
+}
 
-export function sendMessage(msg) {
+export const getResponse = (json, msg) => {
+  console.log(json);
   return {
-    type: types.SEND_MESSAGE,
-    msg
+    type: types.getResponse,
+    json: json,
+    usrMsg: msg
   };
 }

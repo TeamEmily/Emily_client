@@ -1,7 +1,20 @@
 const RESTManager = {
-  get: (msg) => {
-    const address = `125.132.213.135:8080/search/?${msg}`;
+  sendMessage: (msg) => {
+    const address = `http://192.168.0.7:8080/search/?str=${msg}`;
     return HTTPUtil.get(address);
   }
 };
+
+export const HTTPUtil = {
+  get: (address) => {
+    return fetch(address).then(response => {
+      console.log(response);
+      if (response.error) {
+        throw Error(response.json().error);
+      }
+      return response.json();
+    });
+  }
+};
+
 export default RESTManager;

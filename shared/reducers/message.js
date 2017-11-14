@@ -5,9 +5,14 @@ const initialState = {
 };
 
 const message = (state = initialState, action) => {
+  console.log("hi");
+  console.log(action.type);
   switch (action.type) {
-    case types.SEND_MESSAGE:
-      return state;
+    case types.getResponse:
+      return {
+        ...state,
+        logs: [...state.logs, { intent: "user", data: action.usrMsg}, action.json]
+      }
     default:
       return state;
   }
