@@ -4,13 +4,13 @@ import { StyleSheet, Text, View} from 'react-native';
 export default class RecordBar extends React.Component {
   render() {
     var fields = [1, "teamname", "gamesplayed", "totalpoints", "winnum", "drawnum", "losenum", "goaldifference"];
-    console.log(this.props.data)
     return (
       <View style={styles.container}>
         {
           fields.map((field, i)=>{
+            console.log(field);
             return (
-              <Text style={{flex: field == "팀" ? 2 : 1, textAlign: 'center', color: 'white'}}
+              <Text style={{flex: field == "teamname" ? 2 : 1, textAlign: 'center', color: 'white'}}
                 key={"filed"+i}
               >
                 {i === 0 ? 1 : this.props.data[field]}

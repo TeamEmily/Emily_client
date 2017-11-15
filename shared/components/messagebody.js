@@ -1,8 +1,7 @@
 import React from 'react';
 import MessageBubble from './messageBubble';
+import RecordTable from './recordTable';
 import { View, StyleSheet, Text, ScrollView} from 'react-native';
-import RecordBar from './recordBar';
-import RecordColumn from './recordColumn';
 export default class MessageBody extends React.Component {
   constructor(props) {
     super(props);
@@ -36,16 +35,7 @@ export default class MessageBody extends React.Component {
         break;
       case "rank_team":
         return (
-          <View key={'record'+i}>
-            <RecordBar key={'recordBar'+i}/>
-            {
-              json.data.map((record, j)=>{
-                return (
-                  <RecordColumn data={record} key={'recordColumn'+i+j}/>
-                );
-              })
-            }
-          </View>
+          <RecordTable data={json.data} key={'record_table'+i}/>
         );
         break;
       default:
@@ -61,7 +51,7 @@ const styles = StyleSheet.create({
     padding: 3,
     margin: 3,
     height: '90%',
-    backgroundColor: 'yellow'
+    display: 'flex'
   },
   text: {
 

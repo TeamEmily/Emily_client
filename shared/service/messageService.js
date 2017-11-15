@@ -8,7 +8,6 @@ const RESTManager = {
 export const HTTPUtil = {
   get: (address) => {
     return fetch(address).then(response => {
-      console.log(response);
       if (response.error) {
         throw Error(response.json().error);
       }
