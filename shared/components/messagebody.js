@@ -1,6 +1,7 @@
 import React from 'react';
 import MessageBubble from './messageBubble';
 import RecordTable from './recordTable';
+import WeatherTable from './weatherTable';
 import { View, StyleSheet, Text, ScrollView} from 'react-native';
 export default class MessageBody extends React.Component {
   constructor(props) {
@@ -38,6 +39,11 @@ export default class MessageBody extends React.Component {
           <RecordTable data={json.data} key={'record_table'+i}/>
         );
         break;
+      case "weather":
+        return (
+          <WeatherTable data={json.data[0]} key={'weather_table'+i}/>
+        );
+        break;
       default:
         return (
           <Text key={'h'+i}>hi</Text>
@@ -50,8 +56,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 3,
     margin: 3,
-    height: '90%',
-    display: 'flex'
+    height: '90%'
   },
   text: {
 

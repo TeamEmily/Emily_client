@@ -8,7 +8,6 @@ export default class RecordBar extends React.Component {
       <View style={styles.container}>
         {
           fields.map((field, i)=>{
-            console.log(field);
             return (
               <Text style={{flex: field == "teamname" ? 2 : 1, textAlign: 'center', color: 'white'}}
                 key={"filed"+i}

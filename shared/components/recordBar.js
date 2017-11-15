@@ -25,7 +25,7 @@ export default class RecordBar extends React.Component {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: 20,
+    height: 40,
     display: 'flex',
     flexDirection: 'row',
     backgroundColor: '#D3D3D3',
