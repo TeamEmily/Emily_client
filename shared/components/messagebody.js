@@ -1,19 +1,58 @@
 import React from 'react';
 import MessageBubble from './messageBubble';
-import { StyleSheet, Text, ScrollView} from 'react-native';
-
+import { View, StyleSheet, Text, ScrollView} from 'react-native';
+import RecordBar from './recordBar';
+import RecordColumn from './recordColumn';
 export default class MessageBody extends React.Component {
+  constructor(props) {
+    super(props);
+    this.renderContent = this.renderContent.bind(this);
+  }
   render() {
-    console.log(this.props.logs)
     return (
       <ScrollView style={styles.container}>
-        {this.props.logs.map((val, i)=>{
+        {this.props.logs.map((log, i)=>{
           return (
-            <MessageBubble text={val.data} fromUser={i%2==1} key={'message'+i}/>
+            this.renderContent(log, i)
           );
         })}
       </ScrollView>
     )
+  }
+
+
+
+  renderContent(json, i) {
+    switch(json.intent) {
+      case "user":
+        return (
+            <MessageBubble text={json.data} fromUser={true} key={'message_bubble'+i}/>
+        );
+        break;
+      case "greeting":
+        return (
+            <MessageBubble text={json.data} fromUser={false} key={'message_bubble'+i}/>
+        );
+        break;
+      case "rank_team":
+        return (
+          <View key={'record'+i}>
+            <RecordBar key={'recordBar'+i}/>
+            {
+              json.data.map((record, j)=>{
+                return (
+                  <RecordColumn data={record} key={'recordColumn'+i+j}/>
+                );
+              })
+            }
+          </View>
+        );
+        break;
+      default:
+        return (
+          <Text key={'h'+i}>hi</Text>
+        )
+    }
   }
 }
 
