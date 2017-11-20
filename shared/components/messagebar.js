@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import {
   StyleSheet,
@@ -9,7 +8,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-export default class App extends React.Component {
+export default class MessageBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
