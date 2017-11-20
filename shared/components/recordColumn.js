@@ -3,7 +3,7 @@ import { StyleSheet, Text, View} from 'react-native';
 
 export default class RecordBar extends React.Component {
   render() {
-    var fields = [1, "teamname", "gamesplayed", "totalpoints", "winnum", "drawnum", "losenum", "goaldifference"];
+    var fields = ["ranking", "teamname", "gamesplayed", "totalpoints", "winnum", "drawnum", "losenum", "goaldifference"];
     return (
       <View style={styles.container}>
         {
@@ -12,7 +12,7 @@ export default class RecordBar extends React.Component {
               <Text style={{flex: field == "teamname" ? 2 : 1, textAlign: 'center', color: 'white'}}
                 key={"filed"+i}
               >
-                {i === 0 ? 1 : this.props.data[field]}
+                {this.props.data[field]}
               </Text>
             )
           })
