@@ -34,7 +34,7 @@ export default class MessageBody extends React.Component {
             <MessageBubble text={json.data} fromUser={false} key={'message_bubble'+i}/>
         );
         break;
-      case "rank_team":
+      case "team_stats":
         return (
           <RecordTable data={json.data} key={'record_table'+i}/>
         );

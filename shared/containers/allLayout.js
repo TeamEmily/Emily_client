@@ -9,6 +9,7 @@ export default class AllLayout extends React.Component {
       <View style={styles.container}>
         <MessageBodyLayout/>
         <MessageBarLayout/>
+        <View style={{ height: 10 }} />
       </View>
     );
   }
