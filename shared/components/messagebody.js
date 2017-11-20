@@ -32,6 +32,7 @@ export default class MessageBody extends React.Component {
         );
         break;
       case "greeting":
+      case "twenty-fifth_night":
         return (
             <MessageBubble text={json.data} fromUser={false} key={'message_bubble'+i}/>
         );
