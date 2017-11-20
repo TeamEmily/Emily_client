@@ -5,6 +5,7 @@ import RecordColumn from './recordColumn';
 
 export default class RecordTable extends React.Component {
   render() {
+    this.sortData();
     return (
       <View style={styles.container}>
         <RecordBar/>
@@ -17,6 +18,14 @@ export default class RecordTable extends React.Component {
         }
       </View>
     )
+  }
+
+  sortData = () => {
+    this.props.data.sort((a, b)=>{
+        if (a.ranking > b.ranking) return 1;
+        if (a.ranking < b.ranking) return -1;
+        return 0;
+    })
   }
 }
 

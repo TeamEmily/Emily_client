@@ -22,7 +22,7 @@ export default class MessageBody extends React.Component {
 
 
 
-  renderContent(json, i) {
+  renderContent = (json, i) => {
     switch(json.intent) {
       case "user":
         return (
@@ -49,7 +49,7 @@ export default class MessageBody extends React.Component {
           <Text key={'h'+i}>hi</Text>
         )
     }
-  }
+  };
 }
 
 const styles = StyleSheet.create({

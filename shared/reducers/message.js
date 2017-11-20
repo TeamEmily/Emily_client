@@ -5,8 +5,6 @@ const initialState = {
 };
 
 const message = (state = initialState, action) => {
-  console.log("hi");
-  console.log(action.type);
   switch (action.type) {
     case types.getResponse:
       return {
@@ -16,7 +14,6 @@ const message = (state = initialState, action) => {
     default:
       return state;
   }
-
 };
 
 export default message;

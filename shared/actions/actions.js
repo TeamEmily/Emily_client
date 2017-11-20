@@ -8,7 +8,6 @@ export const sendMessage = (msg) => {
 }
 
 export const getResponse = (json, msg) => {
-  console.log(json);
   return {
     type: types.getResponse,
     json: json,
