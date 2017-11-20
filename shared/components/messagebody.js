@@ -2,6 +2,7 @@ import React from 'react';
 import MessageBubble from './messageBubble';
 import RecordTable from './recordTable';
 import WeatherTable from './weatherTable';
+import PlayerInfo from './playerInfo';
 import { View, StyleSheet, Text, ScrollView} from 'react-native';
 export default class MessageBody extends React.Component {
   constructor(props) {
@@ -44,6 +45,10 @@ export default class MessageBody extends React.Component {
           <WeatherTable data={json.data[0]} key={'weather_table'+i}/>
         );
         break;
+      case "player_stats":
+        return (
+          <PlayerInfo data={json.data[0]} key={'player_stats'+i}/>
+        );
       default:
         return (
           <Text key={'h'+i}>hi</Text>
