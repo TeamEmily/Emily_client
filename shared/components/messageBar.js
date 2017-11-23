@@ -17,7 +17,6 @@ export default class MessageBar extends React.Component {
   }
 
   changeInput = (newMessage) => {
-    console.log(this.state.message);
     this.setState({message: newMessage});
   }
 
@@ -50,11 +49,12 @@ export default class MessageBar extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 40,
+    height: 50,
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
-    margin: 3
+    backgroundColor: '#ff9900',
+    padding: 3
   },
   input: {
     flex: 5,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    backgroundColor: '#ff9900',
+    backgroundColor: '#F5F5DC',
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: 5,

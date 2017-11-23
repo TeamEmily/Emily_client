@@ -12,12 +12,12 @@ export default class PlayerInfo extends React.Component {
           <View style={{width: 120, backgroundColor: 'white'}}>
             <Image
               style={{width: 120, height: 120}}
-              source={{uri: 'http://korea-beta.chelseafc.com/content/cfc/ko/homepage/teams/first-team/willian.thumbnail.png'}}
+              source={{uri: this.props.data.pl_pic}}
             />
           </View>
           <View style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
             <View style={{flex: 1, display: 'flex', flexDirection: 'row'}}>
-              <Text style={{flex: 1, textAlign: 'center'}}>팀</Text>
+              <Text style={{flex: 1, textAlign: 'center'}}>{this.props.data.team_name}</Text>
               <Text style={{flex: 1, textAlign: 'center'}}>team</Text>
             </View>
             <View style={{flex: 1, display: 'flex', flexDirection: 'row'}}>

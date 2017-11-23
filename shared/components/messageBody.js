@@ -47,7 +47,7 @@ export default class MessageBody extends React.Component {
           <WeatherTable data={json.data[0]} key={'weather_table'+i}/>
         );
         break;
-      case "player_stats":
+      case "player_info":
         return (
           <PlayerInfo data={json.data[0]} key={'player_stats'+i}/>
         );

@@ -1,16 +1,18 @@
 import React from 'react';
 import MessageBarLayout from './messageBarLayout';
 import MessageBodyLayout from './messageBodyLayout';
-import { View, StyleSheet } from 'react-native';
+import { ImageBackground, StyleSheet, View, Dimensions } from 'react-native';
 
 export default class AllLayout extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <ImageBackground
+        style={styles.container}
+        imageStyle={styles.image}
+        source={require('../image/emily_background.png')}>
         <MessageBodyLayout/>
         <MessageBarLayout/>
-        <View style={{ height: 10 }} />
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -18,7 +20,11 @@ export default class AllLayout extends React.Component {
 const styles = StyleSheet.create({
   container: {
     height: '100%',
-    width: '100%',
-    padding: 5
+    width: '100%'
+  },
+  image: {
+    resizeMode: 'cover',
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
   }
 });
