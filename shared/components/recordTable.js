@@ -31,7 +31,7 @@ export default class RecordTable extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: '80%',
     margin: 10,
     backgroundColor: '#DCDCDC',
   }

@@ -58,7 +58,7 @@ export default class MatchInfo extends React.Component {
 const styles = StyleSheet.create({
   container: {
     height: 300,
-    width: '90%',
+    width: 250,
     display: 'flex',
     flexDirection: 'column',
     margin: 3,

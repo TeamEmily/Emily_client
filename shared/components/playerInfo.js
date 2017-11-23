@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#DCDCDC',
     display: 'flex',
     flexDirection: 'column',
-    alignSelf: 'flex-start',
-    width: '100%'
+    width: 300
   }
 });

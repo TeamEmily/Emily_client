@@ -1,5 +1,6 @@
 import React from 'react';
 import MessageBubble from './messageBubble';
+import Message from './message';
 import RecordTable from './recordTable';
 import WeatherTable from './weatherTable';
 import PlayerInfo from './playerInfo';
@@ -28,32 +29,45 @@ export default class MessageBody extends React.Component {
     switch(json.intent) {
       case "user":
         return (
-            <MessageBubble text={json.data} fromUser={true} key={'message_bubble'+i}/>
+            <MessageBubble fromUser={true} key={'message_bubble'+i}>
+              <Message  text={json.data}/>
+            </MessageBubble>
         );
         break;
       case "greeting":
       case "twenty-fifth_night":
         return (
-            <MessageBubble text={json.data} fromUser={false} key={'message_bubble'+i}/>
+            <MessageBubble fromUser={false} key={'message_bubble'+i}>
+              <Message text={json.data}/>
+            </MessageBubble>
         );
         break;
       case "team_stats":
         return (
-          <RecordTable data={json.data} key={'record_table'+i}/>
+          <MessageBubble fromUser={false} key={'message_bubble'+i}>
+            <RecordTable data={json.data}/>
+            <Message  text={"현우야 코딩해라"}/>
+          </MessageBubble>
         );
         break;
       case "weather":
         return (
-          <WeatherTable data={json.data[0]} key={'weather_table'+i}/>
+          <MessageBubble fromUser={false} key={'message_bubble'+i}>
+            <WeatherTable data={json.data[0]}/>
+          </MessageBubble>
         );
         break;
       case "player_info":
         return (
-          <PlayerInfo data={json.data[0]} key={'player_stats'+i}/>
+          <MessageBubble fromUser={false} key={'message_bubble'+i}>
+            <PlayerInfo data={json.data[0]}/>
+          </MessageBubble>
         );
       case "game_records":
         return (
-          <MatchInfo data={json.data[0]} key={'game_records'+i}/>
+          <MessageBubble fromUser={false} key={'message_bubble'+i}>
+            <MatchInfo data={json.data[0]}/>
+          </MessageBubble>
         );
       default:
         return (
