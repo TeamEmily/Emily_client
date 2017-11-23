@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image} from 'react-native';
+import ModalButton from './modalButton';
+import PlayerStat from './playerStat';
 
 export default class PlayerInfo extends React.Component {
   render() {
@@ -17,8 +19,8 @@ export default class PlayerInfo extends React.Component {
           </View>
           <View style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
             <View style={{flex: 1, display: 'flex', flexDirection: 'row'}}>
+              <Text style={{flex: 1, textAlign: 'center'}}>팀</Text>
               <Text style={{flex: 1, textAlign: 'center'}}>{this.props.data.team_name}</Text>
-              <Text style={{flex: 1, textAlign: 'center'}}>team</Text>
             </View>
             <View style={{flex: 1, display: 'flex', flexDirection: 'row'}}>
               <Text style={{flex: 1, textAlign: 'center'}}>생일</Text>
@@ -38,6 +40,9 @@ export default class PlayerInfo extends React.Component {
             </View>
           </View>
         </View>
+        <ModalButton text="스텟">
+          <PlayerStat data={this.props.data}/>
+        </ModalButton>
       </View>
     )
   }
