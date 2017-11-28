@@ -1,6 +1,6 @@
 const RESTManager = {
   sendMessage: (msg) => {
-    const address = `http://125.132.213.135:8080/search/?str=${msg}`;
+    const address = `http://125.132.213.135:8080/intent/?str=${msg}`;
     return HTTPUtil.get(address);
   }
 };
