@@ -4,7 +4,8 @@ import Message from './message';
 import TeamRecordTable from './teamRecordTable';
 import WeatherTable from './weatherTable';
 import PlayerInfo from './playerInfo';
-import MatchInfo from './matchInfo'
+import MatchInfo from './matchInfo';
+import GameTable from './gameTable';
 import { View, StyleSheet, Text, ScrollView} from 'react-native';
 export default class MessageBody extends React.Component {
   constructor(props) {
@@ -69,6 +70,12 @@ export default class MessageBody extends React.Component {
             <MatchInfo data={json.data[0]}/>
           </MessageBubble>
         );
+      case "schedule":
+        return (
+          <MessageBubble fromUser={false} key={'message_bubble'+i}>
+            <GameTable data={json.data}/>
+          </MessageBubble>
+        )
       default:
         return (
           <Text key={'h'+i}>hi</Text>
