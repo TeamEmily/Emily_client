@@ -18,7 +18,7 @@ export default class ModalButton extends React.Component {
           <Text>{this.props.text}</Text>
         </TouchableHighlight>
         <Modal
-          animationType="slide"
+          animationType="fade"
           transparent={true}
           visible={this.state.modalVisible}
           onRequestClose={() => {alert("Modal has been closed.")}}
@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     height: '100%',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: 'rgba(52, 52, 52, 0.8)'
   }
 });
