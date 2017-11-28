@@ -1,18 +1,18 @@
 import React from 'react';
 import { StyleSheet, View} from 'react-native';
-import RecordBar from './recordBar';
-import RecordColumn from './recordColumn';
+import TeamRecordBar from './teamRecordBar';
+import TeamRecordColumn from './teamRecordColumn';
 
-export default class RecordTable extends React.Component {
+export default class TeamRecordTable extends React.Component {
   render() {
     this.sortData();
     return (
       <View style={styles.container}>
-        <RecordBar/>
+        <TeamRecordBar/>
         {
           this.props.data.map((record, i)=>{
             return (
-              <RecordColumn data={record} key={'recordColumn'+i}/>
+              <TeamRecordColumn data={record} key={'recordColumn'+i}/>
             );
           })
         }

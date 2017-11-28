@@ -1,7 +1,7 @@
 import React from 'react';
 import MessageBubble from './messageBubble';
 import Message from './message';
-import RecordTable from './recordTable';
+import TeamRecordTable from './teamRecordTable';
 import WeatherTable from './weatherTable';
 import PlayerInfo from './playerInfo';
 import MatchInfo from './matchInfo'
@@ -45,7 +45,7 @@ export default class MessageBody extends React.Component {
       case "team_stats":
         return (
           <MessageBubble fromUser={false} key={'message_bubble'+i}>
-            <RecordTable data={json.data}/>
+            <TeamRecordTable data={json.data}/>
             <Message  text={"현우야 코딩해라"}/>
           </MessageBubble>
         );

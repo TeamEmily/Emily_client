@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 
-export default class RecordBar extends React.Component {
+export default class TeamRecordBar extends React.Component {
   render() {
     var fields = ["순위", "팀", "경기수", "승점", "승", "무", "패", "득실차"];
     return (
