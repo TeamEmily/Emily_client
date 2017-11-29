@@ -39,7 +39,7 @@ export default class MessageBody extends React.Component {
       case "twenty-fifth_night":
         return (
             <MessageBubble fromUser={false} key={'message_bubble'+i}>
-              <Message text={json.data}/>
+              <Message text={json.message}/>
             </MessageBubble>
         );
         break;
@@ -47,7 +47,7 @@ export default class MessageBody extends React.Component {
         return (
           <MessageBubble fromUser={false} key={'message_bubble'+i}>
             <TeamRecordTable data={json.data}/>
-            <Message  text={"현우야 코딩해라"}/>
+            <Message  text={json.message}/>
           </MessageBubble>
         );
         break;
@@ -55,6 +55,7 @@ export default class MessageBody extends React.Component {
         return (
           <MessageBubble fromUser={false} key={'message_bubble'+i}>
             <WeatherTable data={json.data[0]}/>
+            <Message  text={json.message}/>
           </MessageBubble>
         );
         break;
@@ -62,18 +63,21 @@ export default class MessageBody extends React.Component {
         return (
           <MessageBubble fromUser={false} key={'message_bubble'+i}>
             <PlayerInfo data={json.data[0]}/>
+            <Message  text={json.message}/>
           </MessageBubble>
         );
       case "game_records":
         return (
           <MessageBubble fromUser={false} key={'message_bubble'+i}>
             <MatchInfo data={json.data[0]}/>
+            <Message  text={json.message}/>
           </MessageBubble>
         );
       case "schedule":
         return (
           <MessageBubble fromUser={false} key={'message_bubble'+i}>
             <GameTable data={json.data}/>
+            <Message  text={json.message}/>
           </MessageBubble>
         )
       default:
