@@ -6,15 +6,21 @@ import WeatherTable from './weatherTable';
 import PlayerInfo from './playerInfo';
 import MatchInfo from './matchInfo';
 import GameTable from './gameTable';
+import PerformanceInfo from './performanceInfo';
 import { View, StyleSheet, Text, ScrollView} from 'react-native';
 export default class MessageBody extends React.Component {
   constructor(props) {
     super(props);
     this.renderContent = this.renderContent.bind(this);
   }
+
   render() {
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView style={styles.container} ref="scrollView"
+        onContentSizeChange={(contentWidth, contentHeight)=>{
+          this.refs.scrollView.scrollTo({y: contentHeight, animated: true});
+        }}
+      >
         {this.props.logs.map((log, i)=>{
           return (
             this.renderContent(log, i)
