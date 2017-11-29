@@ -11,6 +11,7 @@ export default class Message extends React.Component {
 
 const styles = StyleSheet.create({
   text: {
-    width: '50%'
+    width: 300,
+    paddingLeft: 15
   }
 });

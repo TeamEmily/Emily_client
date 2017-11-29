@@ -31,7 +31,7 @@ export default class TeamRecordTable extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    width: '80%',
+    width: '90%',
     margin: 10,
     backgroundColor: '#DCDCDC',
   }

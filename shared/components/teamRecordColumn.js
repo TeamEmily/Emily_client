@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     height: 20,
     display: 'flex',
     flexDirection: 'row',
-    backgroundColor: 'green',
     borderWidth: 1,
     borderColor: "gray"
   }
