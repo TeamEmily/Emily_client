@@ -24,6 +24,7 @@ export default class InitialPage extends React.Component {
     var man = ['khun', 'bam'];
     var character = sex == 0 ? man[Math.floor(Math.random() * 2)] : woman;
     this.props.setCharacter(character);
+    this.props.newUser(character);
     Actions.chat()
   }
 }

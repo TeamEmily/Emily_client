@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     margin: 3,
-    backgroundColor: '#EB8921'
+    backgroundColor: '#DCDCDC'
   },
   column: {
     flex: 1,

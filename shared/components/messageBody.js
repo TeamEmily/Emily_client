@@ -15,6 +15,7 @@ export default class MessageBody extends React.Component {
   }
 
   render() {
+    console.log(this.props.logs);
     return (
       <ScrollView style={styles.container} ref="scrollView"
         onContentSizeChange={(contentWidth, contentHeight)=>{
@@ -41,9 +42,17 @@ export default class MessageBody extends React.Component {
             </MessageBubble>
         );
         break;
+      case "initial":
+      return (
+          <MessageBubble fromUser={false} key={'message_bubble'+i}>
+            <Message text={json.data} padding={true}/>
+          </MessageBubble>
+      );
+      break;
       case "greeting":
       case "twenty-fifth_night":
       case "bad_word":
+      case "hungry":
         return (
             <MessageBubble fromUser={false} key={'message_bubble'+i}>
               <Message text={json.message} padding={true}/>

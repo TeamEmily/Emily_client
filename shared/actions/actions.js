@@ -21,3 +21,10 @@ export const setCharacter = (name) => {
     name: name
   };
 }
+
+export const newUser = (name) => {
+  return {
+    type: types.newUser,
+    name: name
+  }
+}

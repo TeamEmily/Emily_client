@@ -1,4 +1,4 @@
-import { setCharacter } from '../actions/actions';
+import { setCharacter, newUser } from '../actions/actions';
 import { connect } from 'react-redux';
 import InitialPage from '../components/initialPage';
 
@@ -12,6 +12,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setCharacter: (character) => {
       return dispatch(setCharacter(character));
+    },
+    newUser: (name) => {
+      return dispatch(newUser(name));
     }
   };
 };

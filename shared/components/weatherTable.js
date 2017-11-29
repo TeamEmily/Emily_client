@@ -35,6 +35,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#DCDCDC',
     display: 'flex',
     flexDirection: 'column',
-    width: 200
+    width: 300
   }
 });
