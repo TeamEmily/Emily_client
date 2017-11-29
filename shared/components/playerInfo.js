@@ -7,7 +7,7 @@ export default class PlayerInfo extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{height: 30}}>
+        <View style={{height: 30, backgroundColor: 'white'}}>
           <Text style={{textAlign: 'center'}}>{this.props.data.pl_name}</Text>
         </View>
         <View style={{flex: 5, display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>

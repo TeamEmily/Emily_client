@@ -43,12 +43,12 @@ export default class MessageBody extends React.Component {
         break;
       case "greeting":
       case "twenty-fifth_night":
+      case "bad_word":
         return (
             <MessageBubble fromUser={false} key={'message_bubble'+i}>
               <Message text={json.message} padding={true}/>
             </MessageBubble>
         );
-        break;
       case "team_stats":
         return (
           <MessageBubble fromUser={false} key={'message_bubble'+i}>
@@ -56,7 +56,6 @@ export default class MessageBody extends React.Component {
             <Message  text={json.message}/>
           </MessageBubble>
         );
-        break;
       case "weather":
         return (
           <MessageBubble fromUser={false} key={'message_bubble'+i}>
@@ -64,7 +63,6 @@ export default class MessageBody extends React.Component {
             <Message  text={json.message}/>
           </MessageBubble>
         );
-        break;
       case "player_info":
         return (
           <MessageBubble fromUser={false} key={'message_bubble'+i}>
@@ -85,7 +83,14 @@ export default class MessageBody extends React.Component {
             <GameTable data={json.data}/>
             <Message  text={json.message}/>
           </MessageBubble>
-        )
+        );
+      case "player_performance":
+        return (
+          <MessageBubble fromUser={false} key={'message_bubble'+i}>
+            <PerformanceInfo data={json.data}/>
+            <Message  text={json.message}/>
+          </MessageBubble>
+        );
       default:
         return (
           <Text key={'h'+i}>hi</Text>

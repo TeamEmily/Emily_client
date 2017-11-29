@@ -11,11 +11,11 @@ export default class ModalButton extends React.Component {
   }
   render() {
     return (
-      <View style={{backgroundColor: 'green'}}>
+      <View style={{backgroundColor: 'white'}}>
         <TouchableHighlight
           onPress={()=>{this.setModalVisible(true)}}
         >
-          <Text>{this.props.text}</Text>
+          <Text style={{textAlign: 'center'}}>{this.props.text}</Text>
         </TouchableHighlight>
         <Modal
           animationType="fade"
