@@ -1,12 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
+import ImgBam from '../image/bam.png';
+import ImgEmily from '../image/emily1.png';
+import ImgAndrossi from '../image/androssi.png';
+import ImgKhun from '../image/khun.png';
 
 export default class MessageBubble extends React.Component {
   render() {
+    var imageSet = {
+      khun: ImgKhun,
+      bam: ImgBam,
+      androssi: ImgAndrossi
+    };
+    var img = this.props.fromUser ? imageSet[this.props.user] : ImgEmily;
     return (
       <View style={{marginTop: 10, marginBottom: 10}}>
         <Image
-          source={require('../image/emily1.png')}
+          source={img}
           style={this.props.fromUser ? styles.imageFromUser : styles.image}
         />
         <View style={[styles.container, this.props.fromUser && styles.fromUser]}>

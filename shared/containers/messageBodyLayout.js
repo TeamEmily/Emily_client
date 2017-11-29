@@ -3,7 +3,8 @@ import MessageBody from '../components/messageBody';
 
 const mapStateToProps = (state) => {
   return {
-    logs: state.message.logs
+    logs: state.message.logs,
+    name: state.character.name
   };
 };
 

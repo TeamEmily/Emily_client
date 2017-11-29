@@ -11,16 +11,14 @@ export default class GameTable extends React.Component {
   }
 
   render() {
-    console.log(this.state.data[this.state.index]);
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <TouchableHighlight style={{width: 20, backgroundColor: 'green'}}  onPress={()=>{this.setState({index: this.state.index > 0 ? this.state.index - 1 : 0})}}>
+          <TouchableHighlight style={{width: 20}}  onPress={()=>{this.setState({index: this.state.index > 0 ? this.state.index - 1 : 0})}}>
             <View style={styles.arrowLeft}/>
           </TouchableHighlight>
           <Text style={styles.date}>{this.state.data[this.state.index][0].game_date}</Text>
-          <TouchableHighlight style={{width: 20, backgroundColor: 'green'}} onPress={()=>{
-            console.log('click');
+          <TouchableHighlight style={{width: 20}} onPress={()=>{
             this.setState({index: this.state.index < this.state.data.length - 1 ? this.state.index + 1 : this.state.index})}
           }>
             <View style={styles.arrowRight} />
@@ -68,7 +66,7 @@ export default class GameTable extends React.Component {
         <View style={styles.column} key={"column"+i}>
           <Text style={{flex: 1, textAlign: 'center'}}>{gameInfo.game_time}</Text>
           <Text style={{flex: 2, textAlign: 'center'}}>{gameInfo.home_team}</Text>
-          <Text style={{flex: 1, textAlign: 'center'}}>{gameInfo.home_score+":"+gameInfo.away_score}</Text>
+          <Text style={{flex: 1, textAlign: 'center'}}>{gameInfo.home_score ? gameInfo.home_score+":"+gameInfo.away_score : "경기 전"}</Text>
           <Text style={{flex: 2, textAlign: 'center'}}>{gameInfo.away_team}</Text>
         </View>
       )

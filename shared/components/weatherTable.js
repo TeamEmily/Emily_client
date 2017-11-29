@@ -3,7 +3,6 @@ import { StyleSheet, View, Text} from 'react-native';
 
 export default class WeatherTable extends React.Component {
   render() {
-    console.log(this.props.data)
     return (
       <View style={styles.container}>
         <View style={{flex: 1, display: 'flex', flexDirection: 'row'}}>

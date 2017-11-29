@@ -1,30 +1,19 @@
 import React from 'react';
-import MessageBarLayout from './messageBarLayout';
-import MessageBodyLayout from './messageBodyLayout';
-import { ImageBackground, StyleSheet, View, Dimensions } from 'react-native';
+import { Router, Scene } from 'react-native-router-flux';
+import ChatLayout from './chatLayout';
+import InitialPageLayout from './initialPageLayout';
+import Hufs from '../components/hufs';
 
 export default class AllLayout extends React.Component {
   render() {
     return (
-      <ImageBackground
-        style={styles.container}
-        imageStyle={styles.image}
-        source={require('../image/emily_background.png')}>
-        <MessageBodyLayout/>
-        <MessageBarLayout/>
-      </ImageBackground>
+      <Router>
+        <Scene key="root">
+          <Scene key="hufs" component={Hufs} initial={true} hideNavBar={true}/>
+          <Scene key="chat" component={ChatLayout} hideNavBar={true}/>
+          <Scene key="init" component={InitialPageLayout} hideNavBar={true}/>
+        </Scene>
+      </Router>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: '100%',
-    width: '100%'
-  },
-  image: {
-    resizeMode: 'cover',
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-  }
-});

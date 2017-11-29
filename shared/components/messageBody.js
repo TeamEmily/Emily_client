@@ -30,7 +30,7 @@ export default class MessageBody extends React.Component {
     switch(json.intent) {
       case "user":
         return (
-            <MessageBubble fromUser={true} key={'message_bubble'+i}>
+            <MessageBubble fromUser={true} key={'message_bubble'+i} user={this.props.name}>
               <Message  text={json.data}/>
             </MessageBubble>
         );

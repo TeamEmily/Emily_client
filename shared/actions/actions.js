@@ -14,3 +14,10 @@ export const getResponse = (json, msg) => {
     usrMsg: msg
   };
 }
+
+export const setCharacter = (name) => {
+  return {
+    type: types.setCharacter,
+    name: name
+  };
+}

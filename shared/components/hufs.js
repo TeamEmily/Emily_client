@@ -1,5 +1,6 @@
 import React from 'react';
 import { Animated, Text, View, Image } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 export default class Hufs extends React.Component {
   state = {
@@ -13,7 +14,7 @@ export default class Hufs extends React.Component {
         toValue: 1,
         duration: 5000,
       }
-    ).start();
+    ).start(()=>Actions.init());
   }
 
   render() {
